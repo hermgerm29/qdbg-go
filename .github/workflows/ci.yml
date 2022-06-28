@@ -1,0 +1,33 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    name: Continuous Integration
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "macOS-latest"]
+        go: ["1.16.x", "1.17.x", "1.18.x"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-go@v3.2
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Unit tests
+        run: |
+          go test ./...
+
+      - name: Additional checks
+        run: |
+          go vet ./...
+      
