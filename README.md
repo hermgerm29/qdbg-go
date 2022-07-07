@@ -5,7 +5,7 @@
 
 
 # qdbg-go
-Quick debug tool - a general purpose CLI debugging utility. This is a GoLang implementation of ![qdbg](https://github.com/hermgerm29/qdbg).
+Quick debug tool - a general purpose CLI debugging utility. This is a GoLang implementation of [qdbg](https://github.com/hermgerm29/qdbg).
 
 ## Introduction
 
@@ -32,7 +32,7 @@ In the unlikely event that your program runs successfully, `qdbg-go` will stay o
 ### OSX / Linux
 
 ```bash
-GOBIN=/usr/local/bin/ go install github.com/hermgerm29/qdbg-go@v0.2.0
+GOBIN=/usr/local/bin/ go install github.com/hermgerm29/qdbg-go@v0.1.0
 ```
 
 ### Windows
