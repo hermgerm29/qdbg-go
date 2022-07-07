@@ -5,7 +5,7 @@ import (
     "os"
     "os/exec"
     "github.com/pkg/browser"
-    "github.com/hermgerm29/qdbg/internal"
+    "github.com/hermgerm29/qdbg-go/internal"
 )
 
 
