@@ -5,8 +5,7 @@ import (
     "os"
     "os/exec"
     "github.com/pkg/browser"
-
-    "qdbg/internal"
+    "github.com/hermgerm29/qdbg-go/internal"
 )
 
 
@@ -18,8 +17,11 @@ func main() {
     // Execute command
     output, err := exec.Command(cmd, args...).CombinedOutput()
 
-    // On error, search for the user
     if err != nil {
+        if len(output) == 0 {
+            fmt.Printf("Command not found %s\n", cmd)
+            os.Exit(1)
+        }
         if browser.OpenURL(internal.GetSearchUrl(output)) != nil {
             fmt.Println("Unable to open brower. Is one installed?")
         }
