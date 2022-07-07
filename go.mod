@@ -1,4 +1,4 @@
-module qdbg
+module github.com/hermgerm29/qdbg-go
 
 go 1.18
 
